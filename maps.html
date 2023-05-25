@@ -1,72 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>#map {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>height: 400px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">       </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;GFG Google Maps Demo&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="map"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>function initMap() {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>var bounds = new google.maps.LatLngBounds();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>//var uluru = {lat: 28.501859, lng: 77.410320};</p>
-<p class="p1"><span class="Apple-converted-space">         </span>// Multiple markers location, latitude, and longitude</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var markers = [</p>
-<p class="p1"><span class="Apple-converted-space">        </span>['Brooklyn Museum, NY', 40.671349546127146, -73.96375730105808],</p>
-<p class="p1"><span class="Apple-converted-space">        </span>['Central Library, Brooklyn, NY', 40.67254944015601, -73.9682162170653],</p>
-<p class="p1"><span class="Apple-converted-space">        </span>['Prospect Park Zoo, NY', 40.66427511834109, -73.96512605857858],</p>
-<p class="p1"><span class="Apple-converted-space">        </span>['Barclays Center, Brooklyn, NY', 40.68268267107631, -73.97546296241961]</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>var map = new google.maps.Map(document.getElementById('map'), {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>zoom: 4,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>center: {lat: 19.069156, lng: 73.020441}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">       </span>// var marker = new google.maps.Marker({</p>
-<p class="p1"><span class="Apple-converted-space">         </span>// position: uluru,</p>
-<p class="p1"><span class="Apple-converted-space">         </span>// map: map</p>
-<p class="p1"><span class="Apple-converted-space">        </span>//});</p>
-<p class="p1"><span class="Apple-converted-space">          </span>// Add multiple markers to map</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var infoWindow = new google.maps.InfoWindow(), marker, i;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Place each marker on the map <span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>for( i = 0; i &lt; markers.length; i++ ) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>var position = new google.maps.LatLng(markers[i][1], markers[i][2]);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>bounds.extend(position);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>marker = new google.maps.Marker({</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: position,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>map: map,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>title: markers[i][0]</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">                </span>map.fitBounds(bounds);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script async defer</p>
-<p class="p1"><span class="Apple-converted-space">    </span>src=</p>
-<p class="p1">"https://maps.googleapis.com/maps/api/js?key=</p>
-<p class="p1">AIzaSyBakpEuEqz2cbVrsDubRrlG-aR5lLEknGA&amp;callback=initMap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-</body>
+  <head>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>GFG Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+          var bounds = new google.maps.LatLngBounds();
+
+        //var uluru = {lat: 28.501859, lng: 77.410320};
+         // Multiple markers location, latitude, and longitude
+    var markers = [
+        ['Brooklyn Museum, NY', 40.671349546127146, -73.96375730105808],
+        ['Central Library, Brooklyn, NY', 40.67254944015601, -73.9682162170653],
+        ['Prospect Park Zoo, NY', 40.66427511834109, -73.96512605857858],
+        ['Barclays Center, Brooklyn, NY', 40.68268267107631, -73.97546296241961]
+        
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat: 19.069156, lng: 73.020441}
+        });
+       // var marker = new google.maps.Marker({
+         // position: uluru,
+         // map: map
+        //});
+          // Add multiple markers to map
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+    
+    // Place each marker on the map  
+    for( i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+        });
+                map.fitBounds(bounds);
+
+      }
+    </script>
+    <script async defer
+    src=
+"https://maps.googleapis.com/maps/api/js?key=
+AIzaSyBakpEuEqz2cbVrsDubRrlG-aR5lLEknGA&callback=initMap">
+    </script>
+  </body>
 </html>
